@@ -53,6 +53,7 @@ export function SideBar({currentUser,signOut}) {
         name={user.data().fullname}
         photoURL={user.data().photoURL}
         key={user.id}
+        email={user.data().email}
       />
     );
   });
