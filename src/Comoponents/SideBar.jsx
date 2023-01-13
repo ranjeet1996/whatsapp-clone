@@ -23,18 +23,18 @@ export function SideBar({currentUser,signOut}) {
       });
     };
 
-    const getFriends = async () => {
-      const data = await db
-        .collection("Friendlist")
-        .doc(currentUser.email)
-        .collection("list")
-        .onSnapshot((snapshot) => {
-          setFriendList(snapshot.docs);
-        });
-    };
+    // const getFriends = async () => {
+    //   const data = await db
+    //     .collection("Friendlist")
+    //     .doc(currentUser.email)
+    //     .collection("list")
+    //     .onSnapshot((snapshot) => {
+    //       setFriendList(snapshot.docs);
+    //     });
+    // };
 
     getAllUsers();
-    getFriends();
+    // getFriends();
   }, []);
 
   const searchedUser = allUsers.filter((user) => {
@@ -53,7 +53,6 @@ export function SideBar({currentUser,signOut}) {
         name={user.data().fullname}
         photoURL={user.data().photoURL}
         key={user.id}
-        email={user.data().email}
       />
     );
   });
@@ -81,26 +80,11 @@ export function SideBar({currentUser,signOut}) {
       </div>
       <div className="sidebar-chat-list">
       {
-        searchItem.length>0 ? searchItem : friendList.map((friend)=>(
-          <UserProfile
-                name={friend.data().fullname}
-                photoURL={friend.data().photoURL}
-                lastMessage={friend.data().lastMessage}
-                email={friend.data().email}
-              />
-            ))}
-      
-        <UserProfile name="Ranjeet" photoURL="./user.png"/>
-        <UserProfile name="Rakhi" photoURL="./user.png"/>
-        <UserProfile name="Ajeet" photoURL="./user.png"/>
-        <UserProfile name="Chandan" photoURL="./user.png"/>
-        <UserProfile name="Anand" photoURL="./user.png"/>
-        <UserProfile name="Roushni" photoURL="./user.png"/>
-        <UserProfile name="papa" photoURL="./user.png"/>
-        <UserProfile name="mummy" photoURL="./user.png"/>
-        <UserProfile name="rama" photoURL="./user.png"/>
-        <UserProfile name="rohit" photoURL="./user.png"/>
-        <UserProfile name="sanjeev" photoURL="./user.png"/>
+        searchItem.length>0 ? (
+          searchItem 
+          ):(
+          <UserProfile name="Chandan" photoURL={"./user.png"}/>
+        )}
       </div>
     </div>
   );
