@@ -6,12 +6,12 @@ import SearchIcon from "@mui/icons-material/Search";
 import "./sideBar.css";
 import { UserProfile } from "./UserProfile";
 
-export function SideBar() {
+export function SideBar({currentUser,signOut}) {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <div className="sidebar-header-img">
-          <img src="user.png" alt="" />
+        <div className="sidebar-header-img" onClick={signOut}>
+          <img src={currentUser?.photoURL} alt="" />
         </div>
         <div className="sidebar-header-btn">
           <TollIcon />
