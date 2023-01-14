@@ -33,5 +33,9 @@
     font-size: 13px;
     margin-left: 1px;
     margin-top: 2px;
+    width: 30ch;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     color: gray;
   }

@@ -40,6 +40,7 @@
   }
   .sidebar-header-btn > .MuiSvgIcon-root {
     font-size: 23px;
+    cursor: pointer;
   }
   .sidebar-search {
     height: 60px;
@@ -63,7 +64,9 @@
     font-size: 18px;
     color: #acacac;
     margin-left: 10px;
+  
   }
+
   
   .sidebar-search-input > input {
     background-color: transparent;
@@ -79,4 +82,8 @@
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+  }
+
+  .logout-btn{
+    cursor: pointer;
   }
